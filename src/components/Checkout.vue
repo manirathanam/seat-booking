@@ -21,7 +21,7 @@
                 </template>
             </table>
         </div>
-        <button class="checkout-button" :disabled="!selectedSeats.length">checkout</button>
+        <button class="checkout-button" :disabled="!selectedSeats.length">Proceed</button>
     </div>
 </template>
 
