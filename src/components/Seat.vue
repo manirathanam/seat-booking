@@ -24,15 +24,16 @@
             seatClasslist(){
                 return {
                     'restricted': this.type === "restricted",
-                    'available':this.type !== "restricted",
+                    'available':this.type === "available",
                     'selected':this.isSelected,
+                    'blocked': this.type === "blocked"
                 }
             }
         },
         methods:{
             handleClick(){
                 // do nothing on restricted seats.
-                if(this.type === "restricted"){
+                if(this.type === "restricted"|| this.type === "blocked"){
                     return;
                 }
                 let currentState = !this.isSelected;
@@ -67,7 +68,11 @@
 }
 .seat.available {
     background-color: white;
-    
+}
+.seat.blocked {
+    background-color: #9fa8da;
+    cursor: not-allowed;
+    color: white;
 }
 .seat.selected {
     background-color: rgb(35, 32, 179);
